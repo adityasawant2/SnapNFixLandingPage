@@ -40,7 +40,7 @@ export default function CivicTechLanding() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <Construction className="w-4 h-4 text-white" />
             </div>
-            <span className="text-xl font-semibold text-gray-900">SnapNFix</span>
+            <span className="text-xl font-semibold text-gray-900">SpotNFix</span>
           </div>
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -219,7 +219,7 @@ export default function CivicTechLanding() {
               <Layers className="w-3 h-3 mr-1 text-emerald-500 group-hover:text-white transition-colors" />
               Our Process
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How SnapNFix Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How SpotNFix Works</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               A streamlined approach to infrastructure reporting and repair coordination
             </p>
@@ -415,75 +415,83 @@ export default function CivicTechLanding() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 grid-rows-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto md:grid-cols-2 md:grid-rows-2">
             {/* Citizens */}
-            <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-gray-900">Citizens</CardTitle>
-                <CardDescription className="text-gray-700">
-                  Report infrastructure issues and track repair progress
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
-                    <span className="text-gray-700">Simple photo reporting</span>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
-                    <span className="text-gray-700">Status notifications</span>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
-                    <span className="text-gray-700">Community dashboard</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  <Smartphone className="w-4 h-4 mr-2" />
-                  Get Started
-                </Button>
-              </CardContent>
-            </Card>
+            <div className="flex justify-center">
+              <div className="w-full max-w-md">
+                <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-8 h-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-gray-900">Citizens</CardTitle>
+                    <CardDescription className="text-gray-700">
+                      Report infrastructure issues and track repair progress
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
+                        <span className="text-gray-700">Simple photo reporting</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
+                        <span className="text-gray-700">Status notifications</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
+                        <span className="text-gray-700">Community dashboard</span>
+                      </div>
+                    </div>
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                      <Smartphone className="w-4 h-4 mr-2" />
+                      Get Started
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
 
             {/* Contractors */}
-            <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Wrench className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl text-gray-900">Contractors</CardTitle>
-                <CardDescription className="text-gray-700">
-                  Access verified repair opportunities and manage projects
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
-                    <span className="text-gray-700">Verified job listings</span>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
-                    <span className="text-gray-700">Project management tools</span>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
-                    <span className="text-gray-700">Performance tracking</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                  <Building2 className="w-4 h-4 mr-2" />
-                  Join Platform
-                </Button>
-              </CardContent>
-            </Card>
+            <div className="flex justify-center">
+              <div className="w-full max-w-md">
+                <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Wrench className="w-8 h-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-gray-900">Contractors</CardTitle>
+                    <CardDescription className="text-gray-700">
+                      Access verified repair opportunities and manage projects
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
+                        <span className="text-gray-700">Verified job listings</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
+                        <span className="text-gray-700">Project management tools</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 mr-3" />
+                        <span className="text-gray-700">Performance tracking</span>
+                      </div>
+                    </div>
+                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                      <Building2 className="w-4 h-4 mr-2" />
+                      Join Platform
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
 
             {/* Government (centered, spans 2 columns) */}
-            <div className="col-span-2 flex justify-center">
+            <div className="flex justify-center md:col-span-2">
               <div className="w-full max-w-md">
                 <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
                   <CardHeader className="text-center">
@@ -532,7 +540,7 @@ export default function CivicTechLanding() {
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Supporting Sustainable Development</h2>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              SnapNFix aligns with UN Sustainable Development Goals for infrastructure and sustainable cities
+              SpotNFix aligns with UN Sustainable Development Goals for infrastructure and sustainable cities
             </p>
           </div>
 
@@ -575,7 +583,7 @@ export default function CivicTechLanding() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Construction className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-semibold text-gray-900">SnapNFix</span>
+              <span className="text-xl font-semibold text-gray-900">SpotNFix</span>
             </div>
 
             <div className="flex items-center gap-6 text-gray-500">
@@ -597,7 +605,7 @@ export default function CivicTechLanding() {
           </div>
 
           <div className="border-t border-gray-200 mt-8 pt-6 text-center text-gray-500">
-            <p>&copy; 2024 SnapNFix. Building sustainable cities through technology and community engagement.</p>
+            <p>&copy; 2024 SpotNFix. Building sustainable cities through technology and community engagement.</p>
           </div>
         </div>
       </footer>
