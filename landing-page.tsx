@@ -31,6 +31,8 @@ import { useState } from "react"
 
 export default function CivicTechLanding() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const localLoginUrl = "http://localhost:5173/login"; // Define the URL once
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Header */}
@@ -53,13 +55,16 @@ export default function CivicTechLanding() {
             <Link href="#impact" className="text-gray-700 hover:text-gray-900 transition-colors">
               Impact
             </Link>
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-gray-300 bg-transparent text-gray-700 hover:bg-gray-100"
-            >
-              Login
-            </Button>
+            {/* CHANGE #1: Updated Login Button */}
+            <a href={localLoginUrl}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-gray-300 bg-transparent text-gray-700 hover:bg-gray-100"
+                >
+                  Login
+                </Button>
+            </a>
           </nav>
           {/* Mobile hamburger */}
           <button
@@ -76,7 +81,10 @@ export default function CivicTechLanding() {
             <Link href="#process" className="block text-gray-900 font-medium">Process</Link>
             <Link href="#technology" className="block text-gray-900 font-medium">Technology</Link>
             <Link href="#impact" className="block text-gray-900 font-medium">Impact</Link>
-            <Button className="w-full border border-gray-300 text-white bg-blue-600 hover:bg-blue-700 py-2 rounded mt-2">Login</Button>
+            {/* CHANGE #2: Updated Mobile Login Button */}
+            <a href={localLoginUrl}>
+              <Button className="w-full border border-gray-300 text-white bg-blue-600 hover:bg-blue-700 py-2 rounded mt-2">Login</Button>
+            </a>
           </div>
         )}
       </header>
@@ -85,7 +93,6 @@ export default function CivicTechLanding() {
       <section className="relative py-16 lg:py-20 bg-gradient-to-br from-blue-800 via-emerald-800 to-gray-800 border-b-2 border-white shadow-sm overflow-hidden">
         {/* Blurred dark blob backgrounds */}
         <div className="absolute inset-0 pointer-events-none z-0">
-          {/* Deep emerald blob top left */}
           <svg className="absolute top-[-80px] left-[-80px] w-96 h-96 opacity-40 blur-2xl" viewBox="0 0 200 200" fill="none">
             <path fill="#059669" d="M43.2,-75.2C56.7,-67.2,67.2,-56.7,75.2,-43.2C83.2,-29.7,88.7,-13.2,86.7,2.7C84.7,18.7,75.2,34,64.2,47.2C53.2,60.3,40.7,71.3,26.3,77.7C11.9,84.1,-4.4,85.9,-20.2,82.1C-36,78.3,-51.3,68.9,-62.2,55.2C-73.1,41.5,-79.7,23.5,-80.2,5.7C-80.7,-12.1,-75.1,-29.7,-65.2,-43.2C-55.3,-56.7,-41.2,-66.1,-26.1,-73.1C-11,-80.1,4.9,-84.7,20.7,-83.2C36.5,-81.7,51.7,-74.2,43.2,-75.2Z" transform="translate(100 100)" />
           </svg>
@@ -112,18 +119,23 @@ export default function CivicTechLanding() {
                     contractor coordination for more responsive infrastructure maintenance.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                    <Button size="lg" className="bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-3 drop-shadow">
-                      <Camera className="w-5 h-5 mr-2" />
-                      Report Pothole
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-blue-200 text-blue-100 hover:bg-blue-900 hover:border-blue-100 hover:text-white px-8 py-3 bg-transparent"
-                    >
-                      <Building2 className="w-5 h-5 mr-2" />
-                      Contractor Portal
-                    </Button>
+                    {/* CHANGE #3: Updated Hero Buttons */}
+                    <a href={localLoginUrl}>
+                      <Button size="lg" className="bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-3 drop-shadow">
+                        <Camera className="w-5 h-5 mr-2" />
+                        Report Pothole
+                      </Button>
+                    </a>
+                    <a href={localLoginUrl}>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="border-blue-200 text-blue-100 hover:bg-blue-900 hover:border-blue-100 hover:text-white px-8 py-3 bg-transparent"
+                      >
+                        <Building2 className="w-5 h-5 mr-2" />
+                        Contractor Portal
+                      </Button>
+                    </a>
                   </div>
 
                   {/* Problem Statement */}
@@ -160,26 +172,20 @@ export default function CivicTechLanding() {
                       <p className="text-sm text-gray-500">Real-time analysis and severity assessment</p>
                     </div>
 
-                    {/* Pothole Illustration */}
                     <div className="relative bg-gray-100 rounded-xl p-6 mb-4">
                       <img
                         src="/pothole.png"
                         alt="Pothole on a road, used for AI-powered detection demo"
                         className="w-full h-48 object-cover rounded-lg mb-4 bg-gray-200"
                       />
-
-                      {/* Analysis Overlay */}
                       <div className="absolute top-8 right-8 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium animate-pulse">
                         AI Analyzing...
                       </div>
-
-                      {/* Detection Points */}
                       <div className="absolute top-20 left-12 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
                       <div className="absolute top-32 left-20 w-2 h-2 bg-yellow-500 rounded-full animate-ping delay-300"></div>
                       <div className="absolute top-28 right-16 w-2 h-2 bg-orange-500 rounded-full animate-ping delay-700"></div>
                     </div>
 
-                    {/* Analysis Results */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between p-3 bg-gray-100 rounded-lg">
                         <div className="flex items-center space-x-3">
@@ -227,7 +233,6 @@ export default function CivicTechLanding() {
 
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Step 1 */}
               <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -245,7 +250,6 @@ export default function CivicTechLanding() {
                 </CardContent>
               </Card>
 
-              {/* Step 2 */}
               <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -263,7 +267,6 @@ export default function CivicTechLanding() {
                 </CardContent>
               </Card>
 
-              {/* Step 3 */}
               <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -281,7 +284,6 @@ export default function CivicTechLanding() {
                 </CardContent>
               </Card>
 
-              {/* Step 4 */}
               <Card className="border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors">
                 <CardHeader className="text-center pb-4">
                   <div className="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -444,10 +446,13 @@ export default function CivicTechLanding() {
                         <span className="text-gray-700">Community dashboard</span>
                       </div>
                     </div>
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                      <Smartphone className="w-4 h-4 mr-2" />
-                      Get Started
-                    </Button>
+                    {/* CHANGE #4: Updated User Section Buttons */}
+                    <a href={localLoginUrl}>
+                        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                          <Smartphone className="w-4 h-4 mr-2" />
+                          Get Started
+                        </Button>
+                    </a>
                   </CardContent>
                 </Card>
               </div>
@@ -481,10 +486,12 @@ export default function CivicTechLanding() {
                         <span className="text-gray-700">Performance tracking</span>
                       </div>
                     </div>
-                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                      <Building2 className="w-4 h-4 mr-2" />
-                      Join Platform
-                    </Button>
+                    <a href={localLoginUrl}>
+                        <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                          <Building2 className="w-4 h-4 mr-2" />
+                          Join Platform
+                        </Button>
+                    </a>
                   </CardContent>
                 </Card>
               </div>
@@ -518,10 +525,12 @@ export default function CivicTechLanding() {
                         <span className="text-gray-700">Progress oversight</span>
                       </div>
                     </div>
-                    <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">
-                      <BarChart3 className="w-4 h-4 mr-2" />
-                      View Dashboard
-                    </Button>
+                    <a href={localLoginUrl}>
+                        <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">
+                          <BarChart3 className="w-4 h-4 mr-2" />
+                          View Dashboard
+                        </Button>
+                    </a>
                   </CardContent>
                 </Card>
               </div>
@@ -560,10 +569,13 @@ export default function CivicTechLanding() {
             transparency.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-3">
-              <Camera className="w-5 h-5 mr-2" />
-              Start Reporting
-            </Button>
+            {/* CHANGE #5: Updated CTA Buttons */}
+            <a href={localLoginUrl}>
+                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-3">
+                  <Camera className="w-5 h-5 mr-2" />
+                  Start Reporting
+                </Button>
+            </a>
             <Button
               size="lg"
               variant="outline"
